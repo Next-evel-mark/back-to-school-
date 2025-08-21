@@ -1,210 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Back to School Prediction</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle at center, #111, #000);
-      color: white;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 20px;
-      text-shadow: 0 0 10px #ff0080, 0 0 20px #00f, 0 0 30px #0f0;
-    }
-
-    /* Floating Emojis */
-    .emoji {
-      position: absolute;
-      font-size: 2rem;
-      animation: float 10s linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-      20% { opacity: 1; }
-      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-    }
-
-    /* Heptagon */
-    .heptagon {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      margin: 40px auto;
-      border-radius: 50%;
-      animation: spinBorder 10s linear infinite;
-    }
-
-    .day {
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      line-height: 80px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      border: 2px solid #fff;
-      text-align: center;
-      font-weight: bold;
-      transition: transform 2s ease;
-    }
-
-    /* Position 7 days in a circle */
-    .heptagon .day:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
-    .heptagon .day:nth-child(2) { top: 20%; left: 90%; transform: translate(-50%, -50%); }
-    .heptagon .day:nth-child(3) { top: 60%; left: 100%; transform: translate(-50%, -50%); }
-    .heptagon .day:nth-child(4) { top: 90%; left: 70%; transform: translate(-50%, -50%); }
-    .heptagon .day:nth-child(5) { top: 90%; left: 30%; transform: translate(-50%, -50%); }
-    .heptagon .day:nth-child(6) { top: 60%; left: 0; transform: translate(-50%, -50%); }
-    .heptagon .day:nth-child(7) { top: 20%; left: 10%; transform: translate(-50%, -50%); }
-
-    /* Vertical List */
-    .list {
-      margin-top: 30px;
-    }
-    .list div {
-      padding: 5px;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-
-    /* Spin Button */
-    button {
-      margin-top: 20px;
-      padding: 12px 25px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(90deg, #ff0080, #00f, #0f0, red);
-      color: white;
-      cursor: pointer;
-      box-shadow: 0 0 20px #fff;
-      transition: transform 0.2s;
-    }
-    button:hover { transform: scale(1.1); }
-
-    /* Shining Frame */
-    .frame1, .frame2 {
-      position: fixed;
-      border: 4px solid;
-      pointer-events: none;
-      animation: shine 6s linear infinite;
-    }
-    .frame1 {
-      top: 10px; left: 10px; right: 10px; bottom: 10px;
-    }
-    .frame2 {
-      top: 20px; left: 20px; right: 20px; bottom: 20px;
-    }
-
-    @keyframes shine {
-      0% { border-color: #ff0080; }
-      25% { border-color: #00f; }
-      50% { border-color: #0f0; }
-      75% { border-color: red; }
-      100% { border-color: #ff0080; }
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 40px;
-      font-size: 1rem;
-    }
-    footer a {
-      color: #ff0080;
-      text-decoration: none;
-    }
-
-    .socials {
-      margin-top: 15px;
-    }
-    .socials a {
-      margin: 0 10px;
-      padding: 10px 20px;
-      border-radius: 8px;
-      background: #111;
-      color: #fff;
-      border: 2px solid #ff0080;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .socials a:hover { background: #ff0080; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back to School Prediction Casino</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+            z-index: 10;
+        }
+        
+        /* Animated border frames */
+        .outer-frame {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 4px solid transparent;
+            border-radius: 25px;
+            animation: borderAnimation 3s infinite linear;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .inner-frame {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 4px solid transparent;
+            border-radius: 20px;
+            animation: borderAnimation 4s infinite linear reverse;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        @keyframes borderAnimation {
+            0% { 
+                border-color: #0074ff; 
+                box-shadow: 0 0 15px #0074ff, inset 0 0 15px #0074ff; 
+            }
+            25% { 
+                border-color: #ff3399; 
+                box-shadow: 0 0 15px #ff3399, inset 0 0 15px #ff3399; 
+            }
+            50% { 
+                border-color: #ff3333; 
+                box-shadow: 0 0 15px #ff3333, inset 0 0 15px #ff3333; 
+            }
+            75% { 
+                border-color: #008f4a; 
+                box-shadow: 0 0 15px #008f4a, inset 0 0 15px #008f4a; 
+            }
+            100% { 
+                border-color: #0074ff; 
+                box-shadow: 0 0 15px #0074ff, inset 0 0 15px #0074ff; 
+            }
+        }
+        
+        h1 {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 4rem;
+            margin: 20px 0;
+            color: #ffcc00;
+            text-shadow: 3px 3px 0 #ff3399, 
+                         -2px -2px 0 #0074ff,
+                         0 0 20px rgba(255, 204, 0, 0.8);
+            letter-spacing: 3px;
+            transform: rotate(-3deg);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #ff66cc;
+            text-shadow: 0 0 10px rgba(255, 102, 204, 0.7);
+        }
+        
+        .emoji-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 25px 0 40px;
+            flex-wrap: wrap;
+        }
+        
+        .emoji {
+            font-size: 3.5rem;
+            animation: cry 2s infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+            transition: all 0.3s ease;
+        }
+        
+        .emoji:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        @keyframes cry {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            25% { transform: translateY(-8px) rotate(5deg); }
+            50% { transform: translateY(0) rotate(0); }
+            75% { transform: translateY(8px) rotate(-5deg); }
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+        }
+        
+        .wheel-container {
+            position: relative;
+            width: 350px;
+            height: 350px;
+        }
+        
+        .wheel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2b2b4b 0%, #1c1c33 100%);
+            box-shadow: 0 0 0 12px #ffcc00, 
+                        0 0 25px rgba(255, 204, 0, 0.8),
+                        inset 0 0 40px rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        }
+        
+        .wheel-center {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: #ffcc00;
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #1a1a2e;
+            font-weight: bold;
+            border: 4px solid #ff3399;
+        }
+        
+        .day-item {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #ff3399 0%, #ff66cc 100%);
+            border: 4px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: white;
+            transform-origin: center;
+            box-shadow: 0 0 15px rgba(255, 51, 153, 0.8);
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        
+        .day-item:hover {
+            transform: scale(1.1);
+            z-index: 5;
+        }
+        
+        .days-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 200px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 116, 255, 0.6);
+            border: 2px solid #0074ff;
+        }
+        
+        .list-day {
+            width: 160px;
+            padding: 15px;
+            background: linear-gradient(135deg, #0074ff 0%, #00a2ff 100%);
+            border-radius: 35px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: white;
+            box-shadow: 0 0 12px rgba(0, 116, 255, 0.8);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+            cursor: pointer;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        
+        .list-day.active {
+            background: linear-gradient(135deg, #ffcc00 0%, #ffdd44 100%);
+            color: #1a1a2e;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.9);
+            transform: scale(1.15);
+        }
+        
+        .spin-btn {
+            background: linear-gradient(135deg, #ff3333 0%, #ff6666 100%);
+            color: white;
+            border: none;
+            padding: 20px 60px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            border-radius: 60px;
+            cursor: pointer;
+            margin: 40px 0 30px;
+            box-shadow: 0 0 25px rgba(255, 51, 51, 0.8);
+            transition: all 0.3s ease;
+            font-family: 'Luckiest Guy', cursive;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .spin-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.2),
+                rgba(255, 255, 255, 0)
+            );
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+        
+        .spin-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 35px rgba(255, 51, 51, 0.9);
+        }
+        
+        .spin-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .result {
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .result-emoji {
+            font-size: 2.5rem;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .footer {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+        }
+        
+        .credits {
+            font-size: 1.3rem;
+            color: #ffcc00;
+        }
+        
+        .credits a {
+            color: #ff3399;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .credits a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff3399;
+            transition: width 0.3s ease;
+        }
+        
+        .credits a:hover::after {
+            width: 100%;
+        }
+        
+        .social-buttons {
+            display: flex;
+            gap: 25px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #008f4a 0%, #00bb5d 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 18px rgba(0, 143, 74, 0.7);
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 143, 74, 0.9);
+        }
+        
+        .social-btn.instagram {
+            background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+            box-shadow: 0 0 18px rgba(131, 58, 180, 0.7);
+        }
+        
+        .social-btn.instagram:hover {
+            box-shadow: 0 0 25px rgba(131, 58, 180, 0.9);
+        }
+        
+        .music-control {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 25px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .music-control:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .wheel-container {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .day-item {
+                width: 70px;
+                height: 70px;
+                font-size: 1.1rem;
+            }
+            
+            .spin-btn {
+                padding: 16px 45px;
+                font-size: 1.5rem;
+            }
+            
+            .days-list {
+                width: 180px;
+            }
+            
+            .list-day {
+                width: 140px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <h1>🎰 Back to School Prediction 😭</h1>
-
-  <!-- Floating Emojis -->
-  <div class="emoji" style="left:10%; animation-duration:12s;">😭</div>
-  <div class="emoji" style="left:30%; animation-duration:9s;">😢</div>
-  <div class="emoji" style="left:50%; animation-duration:14s;">😩</div>
-  <div class="emoji" style="left:70%; animation-duration:11s;">😭</div>
-  <div class="emoji" style="left:85%; animation-duration:13s;">😢</div>
-
-  <!-- Heptagon Days -->
-  <div class="heptagon" id="heptagon">
-    <div class="day">Mon</div>
-    <div class="day">Tue</div>
-    <div class="day">Wed</div>
-    <div class="day">Thu</div>
-    <div class="day">Fri</div>
-    <div class="day">Sat</div>
-    <div class="day">Sun</div>
-  </div>
-
-  <!-- Vertical List -->
-  <div class="list" id="list">
-    <div>Mon</div>
-    <div>Tue</div>
-    <div>Wed</div>
-    <div>Thu</div>
-    <div>Fri</div>
-    <div>Sat</div>
-    <div>Sun</div>
-  </div>
-
-  <button onclick="spin()">🎲 Spin</button>
-
-  <footer>
-    Made with ❣️ by <a href="https://wa.me/254110550356" target="_blank">MARK</a>
-    <div class="socials">
-      <a href="https://instagram.com/next_level_mark" target="_blank">📸 Follow Developer</a>
-      <a href="https://wa.me/254110550356" target="_blank">💬 Contact Developer</a>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="outer-frame"></div>
+        <div class="inner-frame"></div>
+        
+        <h1>BACK TO SCHOOL PREDICTION</h1>
+        <div class="subtitle">Will your school week be amazing or terrible? Spin to find out!</div>
+        
+        <div class="emoji-container">
+            <div class="emoji">😭</div>
+            <div class="emoji">😢</div>
+            <div class="emoji">😓</div>
+            <div class="emoji">😩</div>
+            <div class="emoji">🥺</div>
+            <div class="emoji">😫</div>
+        </div>
+        
+        <div class="main-content">
+            <div class="wheel-container">
+                <div class="wheel" id="wheel">
+                    <div class="wheel-center">SPIN</div>
+                    <!-- Days will be positioned by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="days-list" id="daysList">
+                <div class="list-day" data-day="monday">Monday</div>
+                <div class="list-day" data-day="tuesday">Tuesday</div>
+                <div class="list-day" data-day="wednesday">Wednesday</div>
+                <div class="list-day" data-day="thursday">Thursday</div>
+                <div class="list-day" data-day="friday">Friday</div>
+                <div class="list-day" data-day="saturday">Saturday</div>
+                <div class="list-day" data-day="sunday">Sunday</div>
+            </div>
+        </div>
+        
+        <button class="spin-btn" id="spinBtn">
+            <i class="fas fa-dice"></i> SPIN THE WHEEL!
+        </button>
+        
+        <div class="result" id="result">
+            Spin to see your school week prediction!
+        </div>
+        
+        <div class="footer">
+            <div class="credits">
+                Made with ❣️ by <a href="https://wa.me/254110550356" target="_blank">MARK</a>
+            </div>
+            
+            <div class="social-buttons">
+                <a href="https://www.instagram.com/next_level_mark" target="_blank" class="social-btn instagram">
+                    <i class="fab fa-instagram"></i> Follow Developer
+                </a>
+                <a href="https://wa.me/254110550356" target="_blank" class="social-btn">
+                    <i class="fab fa-whatsapp"></i> Contact Developer
+                </a>
+            </div>
+            
+            <div class="music-control" id="musicControl">
+                <i class="fas fa-volume-up"></i> Background Music: ON
+            </div>
+        </div>
     </div>
-  </footer>
 
-  <!-- Frames -->
-  <div class="frame1"></div>
-  <div class="frame2"></div>
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-  <!-- Casino Background Music -->
-  <audio autoplay loop>
-    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
-  </audio>
-
-  <script>
-    function spin() {
-      let heptagon = document.getElementById("heptagon");
-      let list = document.getElementById("list");
-
-      // Random rotation for heptagon
-      let randomRotation = 360 * 5 + Math.floor(Math.random() * 360);
-      heptagon.style.transition = "transform 4s ease-out";
-      heptagon.style.transform = `rotate(${randomRotation}deg)`;
-
-      // Random shift for list
-      let items = list.children;
-      let randomIndex = Math.floor(Math.random() * items.length);
-      list.style.transition = "transform 3s ease-out";
-      list.style.transform = `translateY(-${randomIndex * 40}px)`;
-    }
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const wheel = document.getElementById('wheel');
+            const spinBtn = document.getElementById('spinBtn');
+            const daysList = document.getElementById('daysList');
+            const listDays = document.querySelectorAll('.list-day');
+            const bgMusic = document.getElementById('bgMusic');
+            const musicControl = document.getElementById('musicControl');
+            const result = document.getElementById('result');
+            const particles = document.getElementById('particles');
+            
+            const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+            const dayPositions = [
+                { angle: 0, x: 50, y: 5 },           // Top
+                { angle: 51.43, x: 85, y: 15 },     // Top-right
+                { angle: 102.86, x: 95, y: 50 },    // Right
+                { angle: 154.29, x: 85, y: 85 },    // Bottom-right
+                { angle: 205.72, x: 50, y: 95 },    // Bottom
+                { angle: 257.14, x: 15, y: 85 },    // Bottom-left
+                { angle: 308.57, x: 5, y: 50 }      // Left
+            ];
+            
+            // Create particles
+            function createParticles() {
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'absolute';
+                    particle.style.width = '6px';
+                    particle.style.height = '6px';
+                    particle.style.background = ['#0074ff', '#ff3399', '#ff3333', '#008f4a'][i % 4];
+                    particle.style.borderRadius = '50%';
+                    particle.style.boxShadow = '0 0 10px currentColor';
+                    particle.style.left = Math.random() * 100 + 'vw';
+                    particle.style.top = Math.random() * 100 + 'vh';
+                    particle.style.animation = `float ${5 + Math.random() * 10}s infinite linear`;
+                    particles.appendChild(particle);
+                }
+                
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes float {
+                        0% { transform: translate(0, 0) rotate(0deg); opacity: 0.7; }
+                        25% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(90deg); }
+                        50% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(180deg); opacity: 0.4; }
+                        75% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(270deg); }
+                        100% { transform: translate(0, 0) rotate(360deg); opacity: 0.7; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            createParticles();
+            
+            // Position days in a heptagon
+            dayPositions.forEach((pos, index) => {
+                const dayEl = document.createElement('div');
+                dayEl.className = 'day-item';
+                dayEl.textContent = days[index].substring(0, 3).toUpperCase();
+                dayEl.style.top = `${pos.y}%`;
+                dayEl.style.left = `${pos.x}%`;
+                dayEl.setAttribute('data-day', days[index]);
+                wheel.appendChild(dayEl);
+            });
+            
+            const dayElements = document.querySelectorAll('.day-item');
+            let isSpinning = false;
+            
+            // Music control
+            let musicPlaying = false;
+            musicControl.addEventListener('click', function() {
+                if (musicPlaying) {
+                    bgMusic.pause();
+                    musicControl.innerHTML = '<i class="fas fa-volume-mute"></i> Background Music: OFF';
+                } else {
+                    bgMusic.play().catch(e => {
+                        console.log("Audio play failed: ", e);
+                    });
+                    musicControl.innerHTML = '<i class="fas fa-volume-up"></i> Background Music: ON';
+                }
+                musicPlaying = !musicPlaying;
+            });
+            
+            // Try to play music automatically with user interaction
+            spinBtn.addEventListener('click', function() {
+                if (!musicPlaying) {
+                    bgMusic.play().catch(e => {
+                        console.log("Audio play failed: ", e);
+                    });
+                    musicPlaying = true;
+                    musicControl.innerHTML = '<i class="fas fa-volume-up"></i> Background Music: ON';
+                }
+            });
+            
+            // Spin functionality
+            spinBtn.addEventListener('click', function() {
+                if (isSpinning) return;
+                
+                isSpinning = true;
+                spinBtn.disabled = true;
+                result.innerHTML = "Spinning... <div class='result-emoji'>🎰</div>";
+                
+                // Reset previous selections
+                dayElements.forEach(day => {
+                    day.style.background = 'linear-gradient(135deg, #ff3399 0%, #ff66cc 100%)';
+                    day.style.color = 'white';
+                });
+                listDays.forEach(day => day.classList.remove('active'));
+                
+                // Random rotations for wheel and list
+                const wheelDegrees = 1080 + Math.floor(Math.random() * 360); // At least 3 full rotations
+                const listIndex = Math.floor(Math.random() * 7);
+                
+                // Apply spinning animation to wheel
+                wheel.style.transform = `rotate(${wheelDegrees}deg)`;
+                
+                // Apply scrolling animation to list
+                let currentIndex = 0;
+                const scrollInterval = setInterval(() => {
+                    listDays[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % 7;
+                    listDays[currentIndex].classList.add('active');
+                }, 100);
+                
+                // Stop animations after delay
+                setTimeout(() => {
+                    clearInterval(scrollInterval);
+                    
+                    // Select random day from wheel
+                    const effectiveRotation = wheelDegrees % 360;
+                    const selectedIndex = Math.floor((effectiveRotation / 51.43) % 7); // 51.43° per segment (360/7)
+                    const selectedDay = days[selectedIndex];
+                    
+                    // Highlight selected day on wheel
+                    dayElements.forEach(day => {
+                        if (day.getAttribute('data-day') === selectedDay) {
+                            day.style.background = 'linear-gradient(135deg, #ffcc00 0%, #ffdd44 100%)';
+                            day.style.color = '#1a1a2e';
+                        }
+                    });
+                    
+                    // Highlight selected day in list
+                    listDays.forEach(day => {
+                        day.classList.remove('active');
+                        if (day.getAttribute('data-day') === selectedDay) {
+                            day.classList.add('active');
+                        }
+                    });
+                    
+                    // Show result
+                    const outcomes = [
+                        "Terrible day ahead! <div class='result-emoji'>😭</div>",
+                        "Not your best day... <div class='result-emoji'>😢</div>",
+                        "Could be worse! <div class='result-emoji'>😅</div>",
+                        "Average day incoming! <div class='result-emoji'>😐</div>",
+                        "Pretty good day! <div class='result-emoji'>🙂</div>",
+                        "Great day ahead! <div class='result-emoji'>😄</div>",
+                        "Amazing day coming! <div class='result-emoji'>🤩</div>"
+                    ];
+                    
+                    const randomOutcome = outcomes[Math.floor(Math.random() * outcomes.length)];
+                    result.innerHTML = `${selectedDay.charAt(0).toUpperCase() + selectedDay.slice(1)}: ${randomOutcome}`;
+                    
+                    isSpinning = false;
+                    spinBtn.disabled = false;
+                }, 3000);
+            });
+        });
+    </script>
 </body>
 </html>
